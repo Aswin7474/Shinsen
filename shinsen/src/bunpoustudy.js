@@ -4,7 +4,7 @@ export function BunpouStudy() {
     const [difficulty, setDifficulty] = useState(null);
     const [dict, setDict] = useState({});
     const [currentPage, setCurrentPage] = useState(1);
-    const pageSize = 20;
+    const pageSize = 8;
     const [gPoint, setgPoint] = useState(null);
 
     useEffect(() => {
@@ -38,7 +38,7 @@ export function BunpouStudy() {
         </div>
     )
     
-    if (gPoint === null) return (
+    /*if (gPoint === null) return (
         <div className='pt-20'>
             <button onClick={() => setDifficulty(null)}>Go Back</button>
             <ul class="list-disc pl-5">
@@ -53,7 +53,7 @@ export function BunpouStudy() {
             
         </div>
 
-    )
+    ) */
 
     if (gPoint !== null) return (
         <div>
@@ -69,6 +69,33 @@ export function BunpouStudy() {
                     <h3>{example[1]}</h3>
                </div>
             ))}
+        </div>
+    )
+
+    if (gPoint == null) return (
+        <div className="flex justify-start mt-20 p-4.5">
+
+            <table className="table-fixed border-b">
+                <thead>
+                    <tr>
+                        <th className=' border-l-2 border-r-2 border-b border-t dark:border-slate-700'>Grammar Point</th>
+                        <th className=' border-l-2 border-r-2 border-b border-t dark:border-slate-700 p-4 pl-8'>Meaning </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {currentData.map((key) => (
+                        <tr key={key}>
+                            <td className='border-b border-l border-r-2 border-slate-100 dark:border-slate-700 p-4 pl-8 '>
+                                <button onClick={() => setgPoint(key)}>{key}</button>
+                            </td>
+                            <td className='border-b border-l border-r-2 border-slate-100 dark:border-slate-700 p-4 pl-8 '>
+                                <button onClick={() => setgPoint(key)}>{dict[key]['meaning']}</button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
         </div>
     )
 
