@@ -50,19 +50,19 @@ export function KanaWarrior() {
 
     return (
         <div className='kana_game'>
-            <div className='maintitle'>Kana Warrior</div>
-            <div className='streakdiv'>
+            <div className='maintitle text-white'>Kana Warrior</div>
+            <div className='streakdiv text-white'>
                     <h2>Highest Streak: {highestStreak}</h2>
                     <h2>Current Streak: {streak}</h2>
             </div>
 
-             {!gameStarted ? <button onClick={() => {setGameStarted(true); generateRandomKana()}}>Start Game</button> : <button onClick={() => setGameStarted(false)}>Stop Game</button>}
+             {!gameStarted ? <button class="px-1 py-0.5 m-2 bg-gradient-to-r from-[#f5b7b1] to-[#FAF3B1] text-white font-bold rounded-lg shadow-lg hover:from-[#f5b7b1] hover:to-[#FAF3F3] transform hover:scale-105 transition duration-300" onClick={() => {setGameStarted(true); generateRandomKana()}}>Start Game</button> : <button class="px-1 py-0.5 m-2 bg-gradient-to-r from-[#f5b7b1] to-[#FAF3B1] text-white font-bold rounded-lg shadow-lg hover:from-[#f5b7b1] hover:to-[#FAF3F3] transform hover:scale-105 transition duration-300" onClick={() => setGameStarted(false)}>Stop Game</button>}
     
              {gameStarted && (
-                <><h1 className='kana_div'>{randomKana?.key}</h1>
+                <><h1 className='kana_div text-xl m-2 '>{randomKana?.key}</h1>
                 <form onSubmit={handleClick}>
-                    <input className='inputbox' value={text} type='text' onChange={(event) => setText(event.target.value)} placeholder='Enter romaji'/>
-                    <button >Check</button>
+                    <input className='inputbox px-1 py-0.5 m-3' value={text} type='text' onChange={(event) => setText(event.target.value)} placeholder='Enter romaji'/>
+                    <button class="px-1 py-0.5 m-2 bg-gradient-to-r from-[#f5b7b1] to-[#FAF3B1] text-white font-bold rounded-lg shadow-lg hover:from-[#f5b7b1] hover:to-[#FAF3F3] transform hover:scale-105 transition duration-300">Check</button>
                 </form>
                 </>
             )

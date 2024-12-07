@@ -7,6 +7,8 @@ import KanjiWarrior from './KanjiWarrior';
 import BunpouWarrior from './BunpouWarrior';
 import BunpouStudy from './bunpoustudy';
 import BunpouTest from './bunpoutest';
+import Homepage from './Homepage';
+import Howitworks from './Howitworks';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Availablegames />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="games" element={<Availablegames />} />
+          <Route path="howitworks" element={<Howitworks />} />
           <Route path="/kana-warrior" element={<KanaWarrior />} />
           <Route path="/kanji-warrior" element={<KanjiWarrior />} />
           <Route path="/bunpou-warrior" element={<BunpouWarrior />} />

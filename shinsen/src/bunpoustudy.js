@@ -73,30 +73,30 @@ export function BunpouStudy() {
     )
 
     if (gPoint == null) return (
-        <div className="flex justify-start mt-20 p-4.5">
+            <div className="flex justify-start mt-20 p-4.5">
 
-            <table className="table-fixed border-b">
-                <thead>
-                    <tr>
-                        <th className=' border-l-2 border-r-2 border-b border-t dark:border-slate-700'>Grammar Point</th>
-                        <th className=' border-l-2 border-r-2 border-b border-t dark:border-slate-700 p-4 pl-8'>Meaning </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {currentData.map((key) => (
-                        <tr key={key}>
-                            <td className='border-b border-l border-r-2 border-slate-100 dark:border-slate-700 p-4 pl-8 '>
-                                <button onClick={() => setgPoint(key)}>{key}</button>
-                            </td>
-                            <td className='border-b border-l border-r-2 border-slate-100 dark:border-slate-700 p-4 pl-8 '>
-                                <button onClick={() => setgPoint(key)}>{dict[key]['meaning']}</button>
-                            </td>
+                <table className="table-fixed border-b">
+                    <thead>
+                        <tr>
+                            <th className=' border-l-2 border-r-2 border-b border-t dark:border-slate-700'>Grammar Point</th>
+                            <th className=' border-l-2 border-r-2 border-b border-t dark:border-slate-700 p-4 pl-8'>Meaning</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {currentData.map((key) => (
+                            <><tr key={key}>
+                                <td className='border-b border-l border-r-2 border-slate-100 dark:border-slate-700 p-4 pl-8 '>
+                                    <button onClick={() => setgPoint(key)}>{key}</button>
+                                </td>
+                                <td className='border-b border-l border-r-2 border-slate-100 dark:border-slate-700 p-4 pl-8 '>
+                                    <button onClick={() => setgPoint(key)}>{dict[key]['meaning']}</button>
+                                </td>
+                            </tr><div className='left-center-image' style={{backgroundImage:'none'}}></div></>
+                        ))}
+                    </tbody>
+                </table>
 
-        </div>
+            </div>
     )
 
 }
