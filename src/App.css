@@ -6,6 +6,11 @@
   text-align: center;
 }
 
+:root {
+  --shinsenwhite: #FAF3F3;
+  --shinsenpink: #f5b7b1;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -28,6 +33,7 @@ body {
   transform: translateY(-50%);
   width: 25%;
   height: auto;
+  z-index: -1;
 }
 
 .App-header {
